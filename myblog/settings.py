@@ -2,7 +2,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
-import rest_framework
 
 # .env load করো
 load_dotenv()
