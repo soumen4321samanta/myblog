@@ -12,11 +12,13 @@ class TagSerializer(serializers.ModelSerializer):
         fields=['id','name']    
 
 class PostSerializer(serializers.ModelSerializer):
-    author=serializers.StringRelatedField() #author er name show korbe
-    category=CategorySerializer() #category er name show korbe
-    tag=TagSerializer(many=True) #tag er name show korbe
+    author   = serializers.StringRelatedField(read_only=True)
+    category = CategorySerializer(read_only=True)
+    tag      = TagSerializer(many=True, read_only=True)
 
     class Meta:
-        model=Posted
-        fields=['id', 'title', 'body', 'status',
-            'created_at', 'author', 'category', 'tag']
+        model  = Posted
+        fields = [
+            'id', 'title', 'body', 'status',
+            'created_at', 'author', 'category', 'tag'
+        ]
