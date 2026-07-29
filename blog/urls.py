@@ -15,8 +15,9 @@ urlpatterns = [
 
 
 
-    # API URLs (নতুন)
+     # API URLs
     path('api/posts/', api_views.post_list_api, name='api-post-list'),
     path('api/posts/<int:pk>/', api_views.post_detail_api, name='api-post-detail'),
-
+    path('api/posts/<int:pk>/edit/', api_views.post_edit_api, name='api-post-edit'),
+    path('api/posts/<int:pk>/delete/', api_views.post_delete_api, name='api-post-delete'),
 ]
